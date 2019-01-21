@@ -23,3 +23,35 @@ class Users():
 
     def delete(self):
         pass
+    
+    def fetch_comment(self, id_):
+        if comments:
+            for index, comment in enumerate(comments):
+                if comment['id'] == id_:
+                    return index, comment
+        return None
+
+    def get_user(self, id_):
+        for user in users:
+            if id_ == user['id']:
+                return user
+        return None
+
+comments =[]
+users = [
+    {
+        'id': 1,
+        'name': 'Maggy',
+        'role': 'user'
+    },
+    {
+        'id': 2,
+        'name': 'Philip',
+        'role': 'moderator'
+    },
+    {
+        'id': 3,
+        'name': 'Sam',
+        'role': 'admin'
+    }
+]
