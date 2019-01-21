@@ -17,3 +17,15 @@ class ModerateUser(Users):
             print("Comment successfully edited")
         else:
             print("Comment not found")
+
+
+    def delete(self,id):
+      '''deletes their own comments'''
+          index, delete_item =self.user_obj.fetch_comment()
+          if delete_item and userid == self.user_id:
+              comments.remove([index],delete_item])
+              print("comment successfully deleted")
+          else:
+              print("Comment not found")
+
+    
