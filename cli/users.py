@@ -1,6 +1,6 @@
 import datetime
 
-class users():
+class Users():
     def __init__(self, user_type):
         self.logged_in = False
         self.user = user_type
