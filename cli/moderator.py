@@ -1,4 +1,4 @@
-from users import Users, comments, users
+from users import Users, comments, users, fetch_comment
 
 class ModerateUser(Users):
     '''A Moderate user class'''
