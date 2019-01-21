@@ -1,6 +1,4 @@
 from normaluser import NormalUser
-normalusr_obj = NormalUser()
-
 def main():
     """Added Bundler"""
     print("\t=====Welcome to Chazz======")
@@ -13,8 +11,9 @@ def main():
     choose_id =input("\n\n Please Select A user to login: ")
 
     if choose_id == 1:
+        normalusr_obj = NormalUser()
         # login user
-        print(normalusr_obj.log_in())
+        print(normalusr_obj.user_obj.log_in())
         comment = input("\n Create a comment: ")
         print(normalusr_obj.create_comment(comment))
         print("\n Edit comment: ")
@@ -23,7 +22,7 @@ def main():
         comment_update = str(comment_update)
         print(normalusr_obj.edit(comment_id,comment_update))
         print("\n\n User log out")
-        print(normalusr_obj.log_out())
+        print(normalusr_obj.user_obj.log_out())
 
 if __name__ == "__main__":
     main()
