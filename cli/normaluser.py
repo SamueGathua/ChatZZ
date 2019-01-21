@@ -28,5 +28,5 @@ class NormalUser(Users):
             if comment:
                 comment = comment_update
                 comments[index] = comment
-                return comment
+                return "Comment edited to {}".format(comment['comment'])
         return None
