@@ -28,4 +28,14 @@ class ModerateUser(Users):
           else:
               print("Comment not found")
 
-    
+    def create_comment(self, comment: str):
+        '''create a comment'''
+        id_ = len(comments)+1
+
+        comment_dict = {
+            'id': id_,
+            'userid': 2,
+            'comment': comment
+        }
+        comments.append(comment_dict)
+        return comment_dict
