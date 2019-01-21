@@ -1,4 +1,4 @@
-from users import Users, comments, users, fetch_comment
+from users import Users, comments, users
 
 class ModerateUser(Users):
     '''A Moderate user class'''
@@ -10,7 +10,8 @@ class ModerateUser(Users):
 
     def edit_comment(self,id) :
         '''Edits their own comments'''
-        index,edit_item = fetch_comment()
+
+        index,edit_item = self.user_obj.fetch_comment()
         if edit_item and userid == self.user_id:
             comments.insert([index,edit_item])
             print("Comment successfully edited")
