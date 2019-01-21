@@ -1,4 +1,5 @@
 from normaluser import NormalUser
+from moderator import ModerateUser
 def main():
     """Added Bundler"""
     print("\t=====Welcome to Chazz======")
@@ -23,6 +24,20 @@ def main():
         print(normalusr_obj.edit(comment_id,comment_update))
         print("\n\n User log out")
         print(normalusr_obj.user_obj.log_out())
+        
+    if choose_id == 2:
+        # login moderate user
+        moderateusr_obj = ModerateUser()
+        print(moderateusr_obj.user_obj.log_in())
+        comment = input("\n Create a comment: ")
+        print(moderateusr_obj.create_comment(comment))
+        print("\n Edit comment: ")
+        comment_id = input("\n Comment id: ")
+        comment_update = input("\n Comment body: ")
+        comment_update = str(comment_update)
+        print(moderateusr_obj.edit(comment_id,comment_update))
+        print("\n\n User log out")
+        print(moderateusr_obj.log_out())
 
 if __name__ == "__main__":
     main()
