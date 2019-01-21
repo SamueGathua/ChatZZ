@@ -20,22 +20,22 @@ class ModerateUser(Users):
 
 
     def delete(self,id):
-      '''deletes their own comments'''
-          index, delete_item =self.user_obj.fetch_comment()
-          if delete_item and userid == self.user_id:
-              comments.remove([index],delete_item])
+        '''deletes their own comments'''
+        index, delete_item =self.user_obj.fetch_comment()
+        if delete_item and userid == self.user_id:
+              comments.remove([index,delete_item])
               print("comment successfully deleted")
-          else:
+        else:
               print("Comment not found")
 
-    def create_comment(self, comment: str):
+    def create_comment(self, comment_):
         '''create a comment'''
         id_ = len(comments)+1
 
         comment_dict = {
             'id': id_,
             'userid': 2,
-            'comment': comment
+            'comment': str(comment_)
         }
         comments.append(comment_dict)
         return comment_dict
