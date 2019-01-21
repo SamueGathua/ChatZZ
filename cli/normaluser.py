@@ -18,3 +18,15 @@ class NormalUser(Users):
         }
         comments.append(comment_dict)
         return comment_dict
+
+    def edit(self, comment_id, comment_update):
+        '''edit comment'''
+        # fetch comment
+        user_obj = self.get_user(self.user_id)
+        if self.user_id == comment_update['userid'] and user_obj['role'] == self.user_obj.user:
+            index, comment = self.user.fetch_comment(comment_id)
+            if comment:
+                comment = comment_update
+                comments[index] = comment
+                return "Comment edited to {}".format(comment['comment'])
+        return None
