@@ -1,5 +1,6 @@
 ### ChatZZ
-### About ChatZZ
+### Description
+Chatzz is an agile group project
 
 ### Contributors
 - Simon Wathigo
