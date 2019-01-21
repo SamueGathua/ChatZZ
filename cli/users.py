@@ -1,5 +1,24 @@
 import datetime
 
+comments =[]
+users = [
+    {
+        'id': 1,
+        'name': 'Maggy',
+        'role': 'user'
+    },
+    {
+        'id': 2,
+        'name': 'Philip',
+        'role': 'moderator'
+    },
+    {
+        'id': 3,
+        'name': 'Sam',
+        'role': 'admin'
+    }
+]
+
 class Users():
     def __init__(self, user_type):
         self.logged_in = False
@@ -37,21 +56,4 @@ class Users():
                 return user
         return None
 
-comments =[]
-users = [
-    {
-        'id': 1,
-        'name': 'Maggy',
-        'role': 'user'
-    },
-    {
-        'id': 2,
-        'name': 'Philip',
-        'role': 'moderator'
-    },
-    {
-        'id': 3,
-        'name': 'Sam',
-        'role': 'admin'
-    }
-]
+
