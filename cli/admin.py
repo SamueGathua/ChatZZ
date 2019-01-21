@@ -1,4 +1,4 @@
-from users import Users
+from users import Users, comments
 
 class Admin(Users):
     """ Admin class"""
@@ -7,9 +7,18 @@ class Admin(Users):
 
     def edit(self, id, comment_str):
         """ Admin can edit any comment"""
-        comment = self.user.fetch_comment(id)
+        index, comment = self.user.fetch_comment(id)
         if comment:
             comment['body'] = comment_str
-            print("comment updated successfully %s", comment)
+            return ("comment updated successfully %s", comment)
         else:
-            print("Comment not found %d", 404)
+            return ("Comment not found %d", 404)
+
+    def delete(self, id):
+        """ Admin can delete any comment"""
+        index, comment = self.user.fetch_comment(id)
+        if comment:
+            del comments[index]
+            return "item deleted successfully"
+        else:
+            return "item not found"
